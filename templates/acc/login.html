@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block con %}
+    <h1>lOGIN PAGE</h1>
+    <form>
+        {% csrf_token %}
+        <input type = "text" placeholder="INTPUT YOUR USERNAME" size="30" name="uname"><br><br>
+        <input type = "password" placeholder="INTPUT YOUR PASSWORD" size="30" name="upass"><br><br>
+        <button>로그인</button>
+    </form>
+
+{% endblock %}

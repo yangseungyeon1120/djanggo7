@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block con %}
+    <h1>UPDATE PAGE</h1>
+
+    <form method="post>
+    <table>
+        {% csrf_token %}
+        <tr>
+            <th>USERNAME</th>
+            <td><input type="text" name="uname" value="{{user.username}}" disabled></td>
+        </tr>
+        <tr>
+            <th>EMAIL</th>
+            <td><input type="text" value="{{ user.email }}" name="umail"></td>
+        </tr>
+        <tr>
+            <th>LASTNAME</th>
+            <td><input type="text" value="{{ user.last_name }} name="lname"></td>
+        </tr>
+        <tr>
+            <th>FIRSTNAME</th>
+            <td><input type="text" name="fname" value="{{ first_name }}></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="file" name="upic"> </td>
+        </tr>
+        <tr>
+            <td colspan="2"> <b>COMMENT</b><br><textarea cols="40" rows="5" name="ucomm"></textarea> </td>
+        </tr>
+    </table>
+</form>
+    <button>정보수정</button>
+   
+    <hr>
+
+    <form method="post">
+        <h6>패스워드를 변경하려면 현재 비밀번호와 바꿀 비밀번호를 입력해주세요. <br>※ 변경 시 자동으로 로그아웃 됩니다!!</h6>
+        <input type="password" placeholder="INPUT CURRENT PASSWORD" size="30">
+        <input type="password" placeholder="INPUT NEW PASSWORD" size="30">
+        <button>패스워드변경</button>
+    </form>
+
+
+
+    <style>
+        th, td{
+            padding: 10px;
+        }
+    </style>
+{% endblock %}

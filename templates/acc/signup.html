@@ -1,0 +1,34 @@
+<h1>PROFILE PAGE</h1>
+<form>
+    {% csrf_token %}
+    <img src="{{ user.getpic }}" width="250px"><br><br>
+
+    <table>
+        <tr>
+            <th>USERNAME</th>
+            <td><input type="text" value="{{user.username}}" disabled></td>
+        </tr>
+        <tr>
+            <th>EMAIL</th>
+            <td><input type="text" value="{{user.email}}" disabled></td>
+        </tr>
+        <tr>
+            <th>LASTNAME</th>
+            <td><input type="text" value="{{user.last_name}}" disabled></td>
+        </tr>
+        <tr>
+            <th>FIRSTNAME</th>
+            <td><input type="text" value="{{user.first_name}}" disabled></td>
+        </tr>
+        <tr>
+            <td colspan="2"> <textarea cols="40" rows="5" disabled>{{user.comment}}</textarea> </td>
+        </tr>
+    </table>
+    <button>회원가입</button>
+</form>
+
+    <style>
+        th, td{
+            padding: 10px:
+        }
+    </style>

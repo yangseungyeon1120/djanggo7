@@ -1,0 +1,44 @@
+ {% if user.is_authenticate %}
+    <a href="{% url 'acc:index' %}" class="menu">HOME</a>
+    <a href="{% url 'acc:profile' %}" class="menu">PROFILE</a>
+    <a href="{% url 'acc:logut' %}" class="menu">LOGIN</a>
+
+ {% else %}
+    <a href="{% url 'acc:index' %}" class="menu">HOME</a>
+    <a href="{% url 'acc:login' %}" class="menu">LOGIN</a>
+    <a href="{% url. 'acc:signup' %}" class="menu">SIGNUP</a>
+{% endif %}
+
+<h6>접송중인 계정<b> {{ user }}</b></h6>
+
+<hr>
+<br><br>
+{% block con %}
+
+{% endblock %}
+
+<style>
+    .menu {
+        text-decoration: none;
+        font-size: 25px;
+        color : black;
+        font-weight: bold;
+        margin-right: 30px;
+    }
+
+    .app{
+        text-decoration: none;
+        font-size: 25px;
+        color : blue;
+        font-weight: bold;
+        margin-right: 30px;
+    }
+
+    .app:hover{
+        color:black
+    }
+    .menu:hover{
+        color : rgba(7, 73, 253, 0.863);
+    }
+
+</style>
